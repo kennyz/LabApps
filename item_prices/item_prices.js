@@ -37,6 +37,17 @@ define(function(require) {
 	var price = 0.0;
 	if(strPrice!==null)
 		price = parseFloat(strPrice);
+	if(isNaN(price)) price = 0.0;
+	
+	var strShipCost = $("#ShippingCost > em").text();
+    //var r = new RegExp("([\d\.]*)","ig");
+    var r = /\: ([\d]*)/ig;
+    if ( m = r.exec(strShipCost) ) {
+        strShipCost = m[1];
+    }
+	var shipcost = (strShipCost!=null)?parseInt(strShipCost):0;
+	if(!isNaN(shipcost))
+		price += 0+shipcost; //add ship cost
 
 	//title = escapeHTML(unescape(title.replace(/\\u/g, '%u')));
 	title = encodeURIComponent(title);
@@ -45,11 +56,17 @@ define(function(require) {
 	var msg = "";
 	//service powered NAE (cnodejs.net), if you need inviting code, send email to kongwu@taobao.com
 	var remote_url = 'http://kongwu.cnodejs.net/item_prices?title='+title+"&url="+encodeURIComponent(thisurl);
+	var remote_url = 'http://localhost:8080/item_prices?title='+title+"&url="+encodeURIComponent(thisurl);
 	//var remote_url = 'http://localhost:8080/item_prices?title='+escape(title)+"&url="+encodeURIComponent(thisurl);
 		
 	function load_data() {
-		
+
 		var html = "";
+		if(product!=null) {
+			var pic = product["pic"];
+			var title = product["title"];
+			html += "<div><img src=\""+pic+"\" width=80 style=\"border: #DDDDDD solid 1px;\"><br><b>"+title+"</b></div>";
+		}	
 		var max = 10;
 		if(visit_users!=null)
 			for(var i=0; i< visit_users.length; i++) {
@@ -59,15 +76,16 @@ define(function(require) {
 					var strP = user.cnt;
 					var p = parseFloat(strP);
 					var msg = user.msg;
+					var shopurl = user.url;
 					if(msg==null) msg = "";
 					msg  = msg.replace(/<script.*?>.*?<\/script>/ig, '');  
 					//username  = username.replace(/<script.*?>.*?<\/script>/ig, '');  
-					html = html + "<div style=\"color: #666; margin-top: 5px;\">"+title;
+					html = html + "<div style=\"color: #666; margin-top: 5px;\"><a href=\""+shopurl+"\" target=\"_blank\">"+title+"</a>";
 					var color = "";
 					if(p>price) color = "green"; else color = "red";
 					var percent = 0+parseInt(((p-price)/price)*100);
 					html += " <span style=\"color: "+color+"; font-size: 8px;\">";
-					html += "<br>"+decodeURI("%E4%BB%B7%E6%A0%BC")+strP;
+					html += "<br>"+decodeURI("%C2%A5")+strP;
 					if(percent>0) html += "("+decodeURI("%E9%AB%98")+percent+"%)";
 					else if(percent<0) html += "("+decodeURI("%E4%BD%8E")+""+Math.abs(percent)+"%)";
 					html += "</span>";
@@ -90,7 +108,7 @@ define(function(require) {
 	
 	var user_panel = $("#site-nav");
 	var html = "<div style=\"position: fixed; top: 60px; left: 0px; margin: 5px; background: #FFFFFF; width: 140px; border: #DDDDDD solid 1px; z-index:100999; \" id=\"price_panel\">";
-	html = html + "<div style=\"font-size: 14px; color: #a0a8ab; padding: 5px; background: #f9f9f9; \">"+decodeURI("%E8%B4%A7%E6%AF%94%E4%B8%89%E5%AE%B6")+" <input type=\"button\" id=\"price_panel_close\" style=\"color: #DDDDDD; \" value=\"-\" href=\"#\"/></div><div id=\"price_panel_body\" style=\"border-top: #DDDDDD solid 2px; padding: 5px; background: #F7F7F7;\"><div id=\"price_panel_list\"><img src=\"http://sysinfo.cnodejs.net/loading-small.gif\"></div>";
+	html = html + "<div style=\"font-size: 14px; color: #a0a8ab; padding: 5px; background: #f9f9f9; \">"+decodeURI("%E8%B4%A7%E6%AF%94%E4%B8%89%E5%AE%B6")+" <input type=\"button\" id=\"price_panel_close\" style=\"color: #DDDDDD; \" value=\"-\" href=\"#\"/></div><div id=\"price_panel_body\" style=\"border-top: #DDDDDD solid 2px; padding: 5px; background: #FFFFFF;\"><div id=\"price_panel_list\"><img src=\"http://sysinfo.cnodejs.net/loading-small.gif\"></div>";
 	html = html + "</div></div></div>";
 
 	var mall_panel = $("#mall-nav");
@@ -102,9 +120,9 @@ define(function(require) {
 	if($("#visit_panel_body").length>0)
 		$("#visit_panel_body").hide();
 	$("#price_panel_body").hover(function () {
-    	$(this).css({'background-color' : '#FFFFFF', 'font-weight' : 'normal'});
-  	}, function () {
     	$(this).css({'background-color' : '#F7F7F7', 'font-weight' : 'normal'});
+  	}, function () {
+    	$(this).css({'background-color' : '#FFFFFF', 'font-weight' : 'normal'});
   	});
 
 	var is_show = getCookie("show_price_panel");

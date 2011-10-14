@@ -2,6 +2,7 @@
 var shops = require('./shops');
 
 function do_search() {
+	//var remoteurl= "http://s.etao.com/search?q=%C0%CB%B3%B1%D6%AE%E1%DB";
 	var remoteurl= "http://s.etao.com/search?q=%C0%CB%B3%B1%D6%AE%E1%DB";
 	var request = require('request');
 	request({url:remoteurl}, function (error, response, body) {

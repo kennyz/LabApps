@@ -69,12 +69,12 @@ var extractURL = exports.extractURL = function(body, callback) {
 	var i = 0;
 
 	//<li class="entry J_isProduct"><a class="pic title-pic pic-220" title="HTC Desire G7 WCDMA(3G)网络 " data-stat="userid=264205944&lf_aclog=null-null-25-commend-0&at_alitrackid=www.etao.com&lf_acfrom=0&q=htc+g7&style=grid&stats_click=biz%3A3_2&url=%2Fsearch%3Fepid%3D1320247%26v%3Dproduct%26p%3Ddetail%26q%3DHTC%2BDesire%2BG7%2BWCDMA%25283G%2529%25CD%25F8%25C2%25E7%26cat%3D1512" href="/search?epid=1320247&v=product&p=detail&q=HTC+Desire+G7+WCDMA%283G%29%CD%F8%C2%E7&cat=1512&stats_show=biz:3_2" target="_blank"><span><img alt="" class="hesper:small2big" src="http://img01.taobaocdn.com/bao/uploaded/i6/T1YhxuXilNXXcX1Bs__110325.jpg_b.jpg">
-	var r = / title="([^\"]*)".*v=product&p=detail.*src=\"(http:\/\/img[^\"]*)\"/img;
-	if ( m = r.exec(strText) ) {
+	var r0 = / title="([^\"]*)".*v=product&p=detail.*src=\"(http:\/\/img[^\"]*)\"/img;
+	if ( m = r0.exec(strText) ) {
 		title = m[1];
 		pic = m[2];
+		console.log("got a product: "+title+" pic: "+pic);
 	}
-	console.log("got a product: "+title+" pic: "+pic);
 	            	
 	var r = /<a class=\"action-btn\" href=\"(\/search[^\"]*)\"/igm;
 	if ( m = r.exec(strText) ) {
@@ -136,6 +136,9 @@ exports.getList = function(title, cb_output) {
 			else
 				cb_output([]);
 		});
+	  }
+	  else {
+		cb_output([]);
 	  }
 	});
 }
