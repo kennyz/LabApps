@@ -1,4 +1,5 @@
 #!/bin/sh
 
 rm package.zip
-zip package.zip m*.js visit_once.js
+jsmin <visit_once.js> visit_once.min.js "Kenny Zhao"
+zip package.zip manifest.js visit_once.js
