@@ -134,11 +134,11 @@ exports.getList = function(title, cb_output) {
 			if(product["flag"]===1)  //found product
 				get_page_list(product, cb_output);
 			else
-				cb_output([]);
+				cb_output(product,[]);
 		});
 	  }
 	  else {
-		cb_output([]);
+		cb_output({},[]);
 	  }
 	});
 }

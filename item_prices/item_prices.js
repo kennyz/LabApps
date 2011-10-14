@@ -56,7 +56,7 @@ define(function(require) {
 	var msg = "";
 	//service powered NAE (cnodejs.net), if you need inviting code, send email to kongwu@taobao.com
 	var remote_url = 'http://kongwu.cnodejs.net/item_prices?title='+title+"&url="+encodeURIComponent(thisurl);
-	var remote_url = 'http://localhost:8080/item_prices?title='+title+"&url="+encodeURIComponent(thisurl);
+	//var remote_url = 'http://localhost:8080/item_prices?title='+title+"&url="+encodeURIComponent(thisurl);
 	//var remote_url = 'http://localhost:8080/item_prices?title='+escape(title)+"&url="+encodeURIComponent(thisurl);
 		
 	function load_data() {
