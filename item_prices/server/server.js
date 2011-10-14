@@ -22,7 +22,7 @@ http.createServer(function (req, res) {
                 //res.end("NULL");
                         
         }        
-}).listen(80, "127.0.0.1");
+}).listen(8080, "127.0.0.1");
 console.log('Server running at http://127.0.0.1/');
 //visitors.list();
 //just for test
