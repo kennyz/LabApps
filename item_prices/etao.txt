@@ -1,0 +1,722 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk" />
+<title>浪潮之巅_商品搜索_一淘网</title>
+<script>
+var beaconQueue = [],
+g_config={appId:3},
+g_hb_monitor_st=+new Date;
+</script>
+<link href="http://s.etao.com/opensearch.xml" title="一淘商品搜索" type="application/opensearchdescription+xml" rel="search">
+<link rel="stylesheet" href="http://a.tbcdn.cn/apps/etao/common/110816/etao-hf.css" />
+<script src="http://a.tbcdn.cn/s/kissy/1.1.6/kissy-min.js"></script>
+<script src="http://a.tbcdn.cn/apps/etao/common/110808/etao-hf.js"></script>
+<link rel="shortcut icon" href="http://www.etao.com/favicon110804.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/apps/etao/??110913/detail/base.css,110926/detail/detail.css" />
+<script>function beacon_pd(name){var img=new Image();var r=Math.round(Math.random()*100000);img.src='http://www.atpanel.com/search?stype='+name+'&amp;sfrom=product&amp;cache='+r;}</script></head>
+    <body id=detail>
+<script type="text/javascript">
+(function (d) {
+var ta=d.createElement("script");ta.type="text/javascript";ta.async=true;ta.id="tb-beacon";
+ta.setAttribute("exparams","category=&userid=&tid=&channel=112&");
+ta.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/atp.js";
+d.getElementsByTagName("head")[0].appendChild(ta);
+})(document);
+</script>
+
+<script type="text/javascript">
+(function (d) {
+var ta=d.createElement("script");ta.type="text/javascript";ta.async=true;ta.id="tb-beacon-ac";
+ta.setAttribute("exparams","category=&userid=&channel=112&");
+ta.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/ac.js";
+d.getElementsByTagName("head")[0].appendChild(ta);
+})(document);
+</script>
+    
+                
+
+
+
+
+         
+   
+
+<div id="etao-nav">
+        <div id="etao-nav-bd" class="clear-fix">
+            <div class="nav-links">
+                <a class="etao-fp sep nav-link-item" href="http://www.etao.com/">一淘首页</a>
+                <p class="login-info"><script>ETao.Header.writeLoginInfo();</script></p>
+                <div id="J_Myetao" class="myetao" >
+                    <a aria-label="我的一淘菜单，下键打开菜单，ESC关闭" aria-haspopup="true" class="myetao-link nav-link-item" href="http://i.etao.com/" data-stat="etao.etao_sy.dd.my_etao.ietao">我的一淘</a>
+                    <ul role="menu" class="myetao-menu">
+                        <li role="menuitem" class="menuitem"><a href="http://i.etao.com/" data-stat="etao.etao_sy.dd.my_etao.order">我的订单</a></li>
+                       <li role="menuitem" class="menuitem"><a href="http://fanli.etao.com/my/user_rebate.htm" data-stat="etao.etao_sy.dd.my_etao.fanli">我的返利</a></li>
+                        <li role="menuitem" class="menuitem"><a href="http://8.etao.com/user/index.htm" data-stat="etao.etao_sy.dd.my_etao.t8">我的淘吧</a></li>
+                        <li role="menuitem" class="menuitem"><a href="http://i.etao.com/history.html" data-stat="etao.etao_sy.dd.my_etao.scan">浏览历史</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script>ETao.Header.init();</script>
+    </div><div id="site-notice"></div>
+<div id="etao-header" class="clear-fix">
+<div id="etao-header-bd" class="clear-fix">
+<h1 id="etao-logo">
+                <a data-stat="dgp=t0&dgt=9" href="http://www.etao.com/" target="_top" class="etao-main-logo">
+    <b>一淘</b>
+    <img title="一淘网 www.etao.com" alt="" src="//img01.taobaocdn.com/tps/i1/T1_6t6XaxEXXXXXXXX-93-300.png">
+</a>      
+    </h1>
+<div class="etao-form">
+     <form action="/search" method="get" id="J_etaoForm" target="_self">
+     <fieldset>
+     <legend>一淘搜索框</legend>
+                     <input type="hidden" id="q_value" value="" />
+     <ul class="s-tab clear-fix" id="J_sTab" data-redirect="true">
+         <li class="selected" data-suggest-api="http://suggest.taobao.com/sug?area=auction&code=utf-8"><a target="_self" href="http://s.etao.com/search" hidefocus="true" data-stat-submit="dgp=t0&dgl=t&dgt=11">商品</a></li>
+         <li ><a target="_self" href="http://web.etao.com/search?t=5" hidefocus="true" data-stat-submit="dgp=t0&dgl=t&dgt=5">网页</a></li>
+         <li ><a target="_self"  href="http://www.etao.com/search?t=0" hidefocus="true" data-stat-submit="dgp=t0&dgl=t&dgt=0">资讯</a></li>	
+  	 <li ><a target="_self" data-empty-action="http://8.etao.com/etao.htm?ly=e" href="http://8.etao.com/etao.htm?ly=e" hidefocus="true" data-stat-submit="dgp=t0&dgl=t&dgt=2" id="taoba_href">淘吧</a></li>	
+         <li ><a target="_self" data-empty-action="http://tuan.etao.com/index.htm" href="http://tuan.etao.com/list.htm" hidefocus="true" data-stat-submit="dgp=t0&dgl=t&dgt=1">团购</a></li>	
+         
+     </ul>
+     <div class="clear-fix"><div class="ipt-container"><label for="J_searchIpt">搜索、比价、省钱</label><input accesskey="s" autocomplete="off" name="q" maxlength="60" id="J_searchIpt" value="" ></div> <button type="submit"><span>搜索<b></b></span></button></div>
+    </fieldset>
+</form>
+<script>    (function(S){
+        ETao.Header.init();
+        S.ready(function() {
+
+            var etaoSearch = new S.searchTabBox(),
+                etaoSearchBottom = new S.searchTabBox({
+                    searchForm: '#J_etaoForm2',
+                    searchTab: '#J_sTab2',
+                    searchInput: '#J_searchIpt2'
+            });
+
+        });
+    })(KISSY);</script>
+</div>
+<!--右侧banner区--></div>
+</div>
+<div id="etao-content"><div class="nav">
+    <ul class="crumbs">
+        <li>所有分类</li><li class="sep"><s class="rt"><i></i></s></li><li>书籍/杂志/报纸</li><li class="sep"><s class="rt"><i></i></s></li><li>管理</li><li class="sep"><s class="rt"><i></i></s></li><li>商业史传</li><li class="sep"><s class="rt"><i></i></s></li><li class="cur">浪潮之巅</li>
+    </ul>  
+    
+    <dl class="share">
+        <dt>分享到：</dt>
+        <dd><a class="icon_taofenxiang" title="淘江湖" target="_blank" href="http://share.jianghu.taobao.com/share/addShare.htm?url=http%3A%2F%2Fs.etao.com%2Fsearch%3Fq%3D%25C0%25CB%25B3%25B1%25D6%25AE%25E1%25DB%26epid%3D2502010%26v%3Dproduct%26p%3Ddetail%26cat%3D33&title=%C0%CB%B3%B1%D6%AE%E1%DB&pic=http%3A%2F%2Fimg01.taobaocdn.com%2Fbao%2Fuploaded%2FT1LrmkXd8jXXagOFbX_b.jpg"></a></dd>
+        <dd><a class="icon_sinaweibo" title="新浪微博" target="_blank" href="http://service.t.sina.com.cn/share/share.php?url=http%3A%2F%2Fs.etao.com%2Fsearch%3Fq%3D%25C0%25CB%25B3%25B1%25D6%25AE%25E1%25DB%26epid%3D2502010%26v%3Dproduct%26p%3Ddetail%26cat%3D33&appkey=&title=%E6%B5%AA%E6%BD%AE%E4%B9%8B%E5%B7%85&pic=http%3A%2F%2Fimg01.taobaocdn.com%2Fbao%2Fuploaded%2FT1LrmkXd8jXXagOFbX_b.jpg"></a></dd>
+        <dd><a class="icon_tencentweibo" title="腾讯微博" target="_blank" href="http://v.t.qq.com/share/share.php?title=%E6%B5%AA%E6%BD%AE%E4%B9%8B%E5%B7%85&url=http%3A%2F%2Fs.etao.com%2Fsearch%3Fq%3D%25C0%25CB%25B3%25B1%25D6%25AE%25E1%25DB%26epid%3D2502010%26v%3Dproduct%26p%3Ddetail%26cat%3D33&pic=http%3A%2F%2Fimg01.taobaocdn.com%2Fbao%2Fuploaded%2FT1LrmkXd8jXXagOFbX_b.jpg"></a></dd>
+        <dd><a class="icon_douban" title="豆瓣" target="_blank" href="http://www.douban.com/recommend/?url=http%3A%2F%2Fs.etao.com%2Fsearch%3Fq%3D%25C0%25CB%25B3%25B1%25D6%25AE%25E1%25DB%26epid%3D2502010%26v%3Dproduct%26p%3Ddetail%26cat%3D33&title=%E6%B5%AA%E6%BD%AE%E4%B9%8B%E5%B7%85&pic=http%3A%2F%2Fimg01.taobaocdn.com%2Fbao%2Fuploaded%2FT1LrmkXd8jXXagOFbX_b.jpg"></a></dd>
+        <dd><a class="icon_renren" title="人人网" target="_blank" href="http://share.renren.com/share/buttonshare.do?link=http%3A%2F%2Fs.etao.com%2Fsearch%3Fq%3D%25C0%25CB%25B3%25B1%25D6%25AE%25E1%25DB%26epid%3D2502010%26v%3Dproduct%26p%3Ddetail%26cat%3D33&title=%E6%B5%AA%E6%BD%AE%E4%B9%8B%E5%B7%85&pic=http%3A%2F%2Fimg01.taobaocdn.com%2Fbao%2Fuploaded%2FT1LrmkXd8jXXagOFbX_b.jpg"></a></dd>
+        <dd><a class="icon_kaixin" title="开心网" target="_blank" href="http://www.kaixin001.com/repaste/share.php?rurl=http%3A%2F%2Fs.etao.com%2Fsearch%3Fq%3D%25C0%25CB%25B3%25B1%25D6%25AE%25E1%25DB%26epid%3D2502010%26v%3Dproduct%26p%3Ddetail%26cat%3D33&rtitle=%E6%B5%AA%E6%BD%AE%E4%B9%8B%E5%B7%85&pic=http%3A%2F%2Fimg01.taobaocdn.com%2Fbao%2Fuploaded%2FT1LrmkXd8jXXagOFbX_b.jpg"></a></dd>
+    </dl>  
+</div>
+<div class="item-title">
+    <h2><span class="product-title">浪潮之巅</span><i class="hot"></i></h2>
+    <span class="links"><a href="http://ju.atpanel.com/?url=http://8.etao.com/thread_list.htm?bar_name=%C0%CB%B3%B1%D6%AE%E1%DB&ad_id=&am_id=&cm_id=&pm_id=15004918848d1700cb99">浪潮之巅吧</a></span>
+</div><div id="summary" class="section">
+    <div class="gallery">
+                <div>
+                        <div class="carousel-body">
+                <ul class="ks-switchable-content clear-fix">
+
+                                <li>
+                    <div class="pic pic-300-260">
+                        <div class="img-box">
+                            <a>
+                            <img alt="浪潮之巅" src="http://img01.taobaocdn.com/bao/uploaded/T1LrmkXd8jXXagOFbX_250x250.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                                </ul>
+            </div>
+              <ul class="pic-mini-list clear-fix ks-switchable-nav">
+                                <li>
+                    <div class="pic pic-40">
+                       <img src="http://img01.taobaocdn.com/bao/uploaded/T1LrmkXd8jXXagOFbX_40x40.jpg">
+                    </div>
+                </li>
+                            </ul>
+
+            
+                    </div>
+
+    </div>
+       <div class="property">
+        <div class="price-area">
+            <ul class="clear-fix">
+                    <li class="cankao"><span class="attr-name">参考价</span><span class="sep">:</span><span class="attr-val">34.00~49.00元</span></li>
+                                    <li class="coop-store"><span class="attr-name">卓越价</span><span class="sep">:</span><span class="attr-val">35.80元</span></li><li class="coop-store"></li>                        </ul>
+                        <div id="price-trend" >
+            </div>
+            <script>
+                window._g_smallchart_settings = '<settings><font>Tahoma</font><vertical_lines><width>80</width><alpha>70</alpha><mask>0</mask></vertical_lines><data_type>csv</data_type><preloader_on_reload>1</preloader_on_reload><thousands_separator>none</thousands_separator><decimals_separator>.</decimals_separator><scientific_min>0.0001</scientific_min><scientific_max>100000000</scientific_max><background><alpha>100</alpha><border_color>CCCCCC</border_color><border_alpha>100</border_alpha></background><plot_area><margins><left>23</left><right>6</right><top>5</top><bottom>6</bottom></margins></plot_area><grid><x><alpha>8</alpha><dashed>1</dashed><dash_length>4</dash_length></x><y_left><alpha>11</alpha><approx_count>5</approx_count></y_left><y_right><enabled>0</enabled><alpha>10</alpha><dashed>1</dashed></y_right></grid><axes><x><tick_length>0</tick_length><width>0</width><color>FFFFFF</color><alpha>0</alpha></x><y_left><tick_length>0</tick_length><width>0</width><alpha>0</alpha></y_left><y_right><tick_length>0</tick_length><width>0</width><alpha>0</alpha></y_right></axes><values><x><enabled>0</enabled><color>999999</color><text_size>11</text_size></x><y_left><enabled>0</enabled><frequency>2</frequency><unit>元</unit></y_left></values><indicator><enabled>0</enabled><x_balloon_enabled>0</x_balloon_enabled><color>CCCCCC</color><x_balloon_text_color>000000</x_balloon_text_color><zoomable>0</zoomable><line_alpha>50</line_alpha></indicator><balloon><on_off>0</on_off></balloon><scroller><enabled>0</enabled><alpha>48</alpha></scroller><legend><enabled>0</enabled><text_color>333333</text_color><text_size>11</text_size><align>center</align></legend><strings><no_data>未选择数据 :)</no_data></strings><graphs>' +
+                '<graph gid="1"><title>价格</title><color>99CC00</color><color_hover>6633FF</color_hover><line_width>1</line_width><balloon_text_color>000000</balloon_text_color><balloon_text>{value} 元</balloon_text><bullet>round</bullet><bullet_size>4</bullet_size></graph>' +
+
+
+                '</graphs><labels><label lid="0"><text>价格走势</text><text_size>11</text_size><x>3</x><y>2</y><width>16</width></label></labels></settings>'
+
+                window._g_bigchart_settings = '<settings><font>Tahoma</font><text_size>12</text_size><vertical_lines><width>80</width><alpha>70</alpha></vertical_lines><data_type>csv</data_type><preloader_on_reload>1</preloader_on_reload><thousands_separator>none</thousands_separator><decimals_separator>.</decimals_separator><background><alpha>98</alpha></background><plot_area><margins><right>18</right><top>16</top><bottom>20</bottom></margins></plot_area><grid><x><alpha>10</alpha><dashed>1</dashed><dash_length>6</dash_length><approx_count>15</approx_count></x><y_left><approx_count>9</approx_count></y_left><y_right><alpha>10</alpha><dashed>1</dashed></y_right></grid><axes><x><tick_length>5</tick_length><width>1</width><color>CCCCCC</color></x><y_left><tick_length>5</tick_length><width>1</width><color>CCCCCC</color><logarithmic>1</logarithmic></y_left><y_right><tick_length>0</tick_length><width>0</width><alpha>0</alpha></y_right></axes><values><x><color>999999</color><text_size>11</text_size></x><y_left><frequency>2</frequency><unit>元</unit></y_left></values><indicator><color>F3F3F3</color><x_balloon_text_color>000000</x_balloon_text_color><zoomable>0</zoomable><line_alpha>50</line_alpha></indicator><balloon><on_off>0</on_off><max_width>210</max_width></balloon><legend><text_color>333333</text_color><text_size>12</text_size><align>center</align><key><size>15</size></key></legend><strings><no_data>未选择数据 :)</no_data></strings><graphs>' +
+                '<graph gid="1"><title>价格</title><color>99CC00</color><color_hover>6633FF</color_hover><line_width>1</line_width><balloon_text_color>000000</balloon_text_color><balloon_text>{value} 元</balloon_text><bullet>round</bullet><bullet_size>6</bullet_size></graph>' +
+                '</graphs></settings>';
+                window._g_smallchart_data = ";36.00\n;37.00\n;36.00\n;36.00\n;36.00\n;38.00\n;38.00\n;38.00\n";
+                window._g_bigchart_data = "　;36.00\n　;37.00\n　;36.00\n一月前;36.00\n三周前;36.00\n两周前;38.00\n一周前;38.00\n本周;38.00\n";
+            </script>
+                    </div>
+        <div class="seller-area">
+            <ul>
+                        <li class="title"><b>优质商家</b><em><a href="#contrast" target="_self">(共9个商家)</a></em></li>
+                                                <li class="seller">
+                                <a data-stat="userid=&lf_aclog=0-12590904626-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=12590904626" href="http://item.tmall.com/item.htm?id=12590904626" target="_blank" class="btn-buy action-btn"><span>去购买</span></a>
+                <span class="attr-name">网上商城价</span>
+                <span class="sep">:</span>
+                                <span class="price">34.80元</span>
+                                <span class="seller-logo"><img src="http://img04.taobaocdn.com/tps/i4/T1l843XlNqXXXXXXXX-70-20.gif" alt=""></span>
+                </li>
+                
+
+                                                                            </ul>
+        </div>
+            </div>
+</div>
+<div id="contrast" class="section">
+    <ul class="tab">
+        <li class="crt"><a target="_self" href="#contrast"> 比价购物<s class="btri-up"></s></a></li>
+        <li><a target="_self" href="#attributes">参数</a></li>
+        <li class="t-top"> <a target="_self" href="#detail"><s class="btri-up"></s>顶部</a> </li>
+</ul>   
+    <div class="tab-panel">
+        <div class="compare">
+                <table class="contrast-table">
+             <tbody>
+                                 <tr>
+        <th class="is-open"></th>
+        <th class="merchant-name">
+            商家
+        </th>
+        <th class="goods">
+            商品/数量
+        </th>
+
+        <th class="price">
+            价格
+        </th>
+
+   <th class="service-tag">服务</th>
+   <th class="refine">
+       <form action="/search">
+       <input type="hidden" value="浪潮之巅" id="q" name="q"/><input type="hidden" value="50003149" id="cat" name="cat"/><input type="hidden" value="list" id="style" name="style"/><input type="hidden" value="product" id="v" name="v"/><input type="hidden" value="2502010" id="epid" name="epid"/><input type="hidden" value="detail" id="p" name="p"/><input type="hidden" value="detail" id="psrc" name="psrc"/><input type="hidden" value="34" id="start_price" name="start_price"/><input type="hidden" value="49" id="end_price" name="end_price"/><input type="hidden" value="all" id="tab" name="tab"/>       <label aria-label="在结果中查找"><input class="txt" name="q_and" placeholder="在结果中查找" type="text" value="" /></label>
+       <button type="submit" class="btn-search">搜索</button>
+       <input type="hidden" class="text" name="q" size="10"  value="浪潮之巅"/>
+       </form>
+   </th>
+</tr>
+                                                
+                                                <tr>
+                    <td class="is-open">
+                                                <span class="toggler collapse J_ShowMoreGoodsIcon"></span>
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://store.taobao.com/shop/view_shop.htm?user_number_id=330935854" class="pic"><img src="http://img04.taobaocdn.com/tps/i4/T1l843XlNqXXXXXXXX-70-20.gif"  title="淘宝商城" alt="淘宝商城" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=0-12590904626-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fitem.tmall.com%2Fitem.htm%3Fid%3D12590904626" href="http://item.tmall.com/item.htm?id=12590904626" title="正版现货★浪潮之巅 吴军 著">正版现货★浪潮之巅 吴军 著</a>
+                            </div>
+                            <div class="price">34.80</div>
+                                                                                                            <div class="addition"><span>商家：</span><a class="seller" target="_blank" href="http://store.taobao.com/shop/view_shop.htm?user_number_id=330935854">美如林图书专营店</a></div>
+                            
+                            </li>
+                        </ul>
+                                                    <div class="sum-and-more">
+                            <span data-requrl="/product/detail_async.php?q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&v=product&epid=2502010&p=detail&psrc=detail&start_price=34&end_price=49&comment_num=6&&fseller=淘宝商城&n=10&s=" data-status="collapse" data-countcur="1" data-counttotal="16" class="J_ShowMoreGoods">
+                                <span class="button">共16件商品</span>
+                                <s class="btri-down"></s>
+                            </span>
+                            <span class="more hidden">
+                                <span class="sep">|</span>
+                                <span class="J_GetMoreGoods">
+                                    <span class="button">展开更多</span>
+                                    <s class="btri-down"><i></i></s>
+                                </span>
+                            </span>
+                        </div>
+                                                </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>正品保障</li></ul>                    </td>
+                                        <td class="refine" rowspan="9">
+                    <form action="/search" id="refine_form">
+    <div id="refine">
+                         <h3>按价格筛选：</h3>
+        <div class="slide-bar" id="J_SlideBar" data-min-value="34" data-max-value="49">
+            <div class="left" id="J_SL_L"><i id="J_SlideBar_Left"></i></div>
+            <div class="right" id="J_SL_R"><i id="J_SlideBar_Right"></i></div>
+        </div>
+                 <input type="hidden" value="浪潮之巅" id="q" name="q"/><input type="hidden" value="50003149" id="cat" name="cat"/><input type="hidden" value="list" id="style" name="style"/><input type="hidden" value="product" id="v" name="v"/><input type="hidden" value="2502010" id="epid" name="epid"/><input type="hidden" value="detail" id="p" name="p"/><input type="hidden" value="detail" id="psrc" name="psrc"/><input type="hidden" value="all" id="tab" name="tab"/>                <div class="slide-bar-input">
+
+        <input type="text" class="left-price" id="J_SL_L_I" value="34" name="start_price">
+            <span>~</span>
+            <input type="text" class="right-price" id="J_SL_R_I" value="49" name="end_price">
+        </div>
+                          <h3>按购买条件筛选：</h3>
+        <ul id="refine-options">
+        	<li><input type="checkbox" id="refine-options-certified_goods" name="user_type" value="1"><label for="refine-options-certified_goods">正品保障</label></li>	<li><input type="checkbox" id="refine-options-exchange_noreason" name="promoted_service4" value="4"><label for="refine-options-exchange_noreason">无理由退换</label></li>	<li><input type="checkbox" id="refine-options-pay_on_delivery" name="support_cod" value="1"><label for="refine-options-pay_on_delivery">货到付款</label></li>	<li><input type="checkbox" id="refine-options-buyer_protection" name="isprepay" value="1"><label for="refine-options-buyer_protection">消费保障</label></li>            <li><input type="submit" class="btn-sure" value="确定"></li>
+        </ul>
+       </div>
+</form>
+                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=648174998" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T15ZhLXgxzXXb1upjX.jpg_80x40.jpg"  title="京东商城" alt="京东商城" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=1-6905333543733647392-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fbook.360buy.com%2F10795492.html" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fbook.360buy.com%2F10795492.html&type=alipay&to=d&nid=6905333543733647392&sid=648174998&name=%BE%A9%B6%AB%C9%CC%B3%C7&pid=2088001505446151&sign=e6eb06d38f912e9b6f07c6990231accd" title="浪潮之巅">浪潮之巅</a>
+                            </div>
+                            <div class="price">35.80</div>
+                                                <div class="rebate-preference">
+                	    <ul class="rebate-preference-s">
+						      <li><span class="li-rebate"><span class="N_icon icon-rebate"></span>返利约0.0-2.15元</span></li>						      					    </ul>
+					<textarea class="rebate-detail hidden">
+<span class="N_icon icon-tips-rebate"></span>
+<p class="rebate-tip"><a href="/rebate_redirect.html?nid=6905333543733647392" target="_blank">点此购买</a>，可获返利约<span class="new-tips-error-text">0.0-2.15元</span>。 <a href="/rebate_redirect.html?nid=6905333543733647392" target="_blank">去购买&raquo;</a></p>
+</textarea>							            </div>
+		                                         
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>正品保障</li><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=675046841" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1PHekXaRtXXb1upjX.jpg_80x40.jpg"  title="卓越亚马逊" alt="卓越亚马逊" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=2-9191910534597020694-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fwww.amazon.cn%2F%25E6%25B5%25AA%25E6%25BD%25AE%25E4%25B9%258B%25E5%25B7%2585-%25E5%2590%25B4%25E5%2586%259B%2Fdp%2FB005DSK504" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.amazon.cn%2F%25E6%25B5%25AA%25E6%25BD%25AE%25E4%25B9%258B%25E5%25B7%2585-%25E5%2590%25B4%25E5%2586%259B%2Fdp%2FB005DSK504&type=alipay&to=d&nid=9191910534597020694&sid=675046841&name=%D7%BF%D4%BD%D1%C7%C2%ED%D1%B7&pid=2088001762942652&sign=54e7202bc897a898ad2ea32818742657" title="浪潮之巅 [平装]">浪潮之巅 [平装]</a>
+                            </div>
+                            <div class="price">35.80</div>
+                                                <div class="rebate-preference">
+                	    <ul class="rebate-preference-s">
+						      <li><span class="li-rebate"><span class="N_icon icon-rebate"></span>返利约0.0-2.51元</span></li>						      					    </ul>
+					<textarea class="rebate-detail hidden">
+<span class="N_icon icon-tips-rebate"></span>
+<p class="rebate-tip"><a href="/rebate_redirect.html?nid=9191910534597020694" target="_blank">点此购买</a>，可获返利约<span class="new-tips-error-text">0.0-2.51元</span>。 <a href="/rebate_redirect.html?nid=9191910534597020694" target="_blank">去购买&raquo;</a></p>
+</textarea>							            </div>
+		                                         
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>正品保障</li><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=648350327" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1Dr4MXfXyXXb1upjX.jpg_80x40.jpg"  title="当当网" alt="当当网" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=3-6802133360449730044-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D22465046" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fproduct.dangdang.com%2Fproduct.aspx%3Fproduct_id%3D22465046&type=alipay&to=d&nid=6802133360449730044&sid=648350327&name=%B5%B1%B5%B1%CD%F8&pid=2088301773687981&sign=9fa0a049ab5646490bfc14329d761dae" title="浪潮之巅（Google科学家、腾讯副总裁吴军新作，赢得Google黑板报超百万访问量，李开复作序推荐）">浪潮之巅（Google科学家、腾讯副总裁吴军新作，赢得Google黑板报超百万访问量，李开复作序推荐）</a>
+                            </div>
+                            <div class="price">35.80</div>
+                                                <div class="rebate-preference">
+                	    <ul class="rebate-preference-s">
+						      <li><span class="li-rebate"><span class="N_icon icon-rebate"></span>返利约0.0-2.51元</span></li>						      					    </ul>
+					<textarea class="rebate-detail hidden">
+<span class="N_icon icon-tips-rebate"></span>
+<p class="rebate-tip"><a href="/rebate_redirect.html?nid=6802133360449730044" target="_blank">点此购买</a>，可获返利约<span class="new-tips-error-text">0.0-2.51元</span>。 <a href="/rebate_redirect.html?nid=6802133360449730044" target="_blank">去购买&raquo;</a></p>
+</textarea>							            </div>
+		                                         
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>正品保障</li><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=702810136" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1zJuaXoVrXXb1upjX.jpg_80x40.jpg"  title="快书包" alt="快书包" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=4-2076411508577053904-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fwww.kuaishubao.com%2F62%2F1199.html" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.kuaishubao.com%2F62%2F1199.html&type=alipay&to=d&nid=2076411508577053904&sid=702810136&name=%BF%EC%CA%E9%B0%FC&pid=2088301446612911&sign=3b7be96f1c92946b12794a725b5c98d8" title="《浪潮之巅》（IT巨头们的兴衰之路）">《浪潮之巅》（IT巨头们的兴衰之路）</a>
+                            </div>
+                            <div class="price">35.90</div>
+                                                    
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=723767497" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1zWWhXi8bXXb1upjX.jpg_80x40.jpg"  title="精彩网" alt="精彩网" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=5-6262234871882009093-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fwww.exvv.com%2Fmall%2Fdetail.jsp%3FproID%3D1418590" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.exvv.com%2Fmall%2Fdetail.jsp%3FproID%3D1418590&type=alipay&to=d&nid=6262234871882009093&sid=723767497&name=%BE%AB%B2%CA%CD%F8&pid=2088002989423836&sign=3d6ea11c5e3094c75e574d563659f305" title="[图书] 浪潮之巅（Google科学家、腾讯副总裁吴军新作，赢得Google黑板报超百万访问量，李开复作序推荐）">[图书] 浪潮之巅（Google科学家、腾讯副总裁吴军新作，赢得Google黑板报超百万访问量，李开复作序推荐）</a>
+                            </div>
+                            <div class="price">38.00</div>
+                                                    
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                                            </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=675379153" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1OrSjXittXXb1upjX.jpg_80x40.jpg"  title="中国图书网" alt="中国图书网" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=6-2933339736031678975-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fwww.bookschina.com%2F5243591.htm" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.bookschina.com%2F5243591.htm&type=alipay&to=d&nid=2933339736031678975&sid=675379153&name=%D6%D0%B9%FA%CD%BC%CA%E9%CD%F8&pid=2088001349509221&sign=a1d657acd77ba0500a9606ad66305380" title="浪潮之巅">浪潮之巅</a>
+                            </div>
+                            <div class="price">43.50</div>
+                                                <div class="rebate-preference">
+                	    <ul class="rebate-preference-s">
+						      <li><span class="li-rebate"><span class="N_icon icon-rebate"></span>返利约0.0-3.05元</span></li>						      					    </ul>
+					<textarea class="rebate-detail hidden">
+<span class="N_icon icon-tips-rebate"></span>
+<p class="rebate-tip"><a href="/rebate_redirect.html?nid=2933339736031678975" target="_blank">点此购买</a>，可获返利约<span class="new-tips-error-text">0.0-3.05元</span>。 <a href="/rebate_redirect.html?nid=2933339736031678975" target="_blank">去购买&raquo;</a></p>
+</textarea>							            </div>
+		                                         
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>货到付款</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=693835347" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T197OmXiJIXXb1upjX.jpg_80x40.jpg"  title="文轩网" alt="文轩网" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=7-9172862470784314926-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fwww.winxuan.com%2Fproduct%2Fbook_1_1200091848.html" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.winxuan.com%2Fproduct%2Fbook_1_1200091848.html&type=alipay&to=d&nid=9172862470784314926&sid=693835347&name=%CE%C4%D0%F9%CD%F8&pid=2088401422386730&sign=2e3a5835e9a3f3b3e076327b24f132f8" title="浪潮之巅">浪潮之巅</a>
+                            </div>
+                            <div class="price">48.90</div>
+                                                <div class="rebate-preference">
+                	    <ul class="rebate-preference-s">
+						      <li><span class="li-rebate"><span class="N_icon icon-rebate"></span>返利约0.0-2.93元</span></li>						      					    </ul>
+					<textarea class="rebate-detail hidden">
+<span class="N_icon icon-tips-rebate"></span>
+<p class="rebate-tip"><a href="/rebate_redirect.html?nid=9172862470784314926" target="_blank">点此购买</a>，可获返利约<span class="new-tips-error-text">0.0-2.93元</span>。 <a href="/rebate_redirect.html?nid=9172862470784314926" target="_blank">去购买&raquo;</a></p>
+</textarea>							            </div>
+		                                         
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>正品保障</li><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                    <!--
+<ul class="pager">
+    <li class="prev disabled">
+    <span class="double-lt"><s class="s1"><i></i></s><s class="s2"><i></i></s></span>上一页
+    </li>
+    <li class="num cur">1</li>
+    <li class="num"><a target="_self" href="#">2</a></li>
+    <li class="num"><a target="_self" href="#">3</a></li>
+    <li class="next">
+    <a target="_self" href="#">下一页<span class="double-rt"><s class="s1"><i></i></s><s class="s2"><i></i></s></span></a>
+    </li>
+</ul>
+-->
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        
+                <h2>个人商家</h2>
+         <table class="contrast-table">
+		    <tbody>
+                                                            <tr>
+                    <td class="is-open">
+                                                <span class="toggler collapse J_ShowMoreGoodsIcon"></span>
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                            <a target="_blank" href="http://shop.etao.com/search.htm?id=674995202" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1hEhNXX4yXXb1upjX.jpg_80x40.jpg"  title="孔夫子旧书网" alt="孔夫子旧书网" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                    <div class="goods-wrap">
+                                                <ul class="item-array">
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=0-3850735575895734619-0-price_asc-0&at_alitrackid=s.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=start_price%3A34%3Bend_price%3A49&url=http%3A%2F%2Fbook.kongfz.com%2F17610%2F124382902%2F" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fbook.kongfz.com%2F17610%2F124382902%2F&type=alipay&to=d&nid=3850735575895734619&sid=674995202&name=%BF%D7%B7%F2%D7%D3%BE%C9%CA%E9%CD%F8&pid=2088101891087430&sign=29b4b5bb912b36710683c4f10e8670e6" title="图书名称：浪潮之巅（货号：9787121139512）">图书名称：浪潮之巅（货号：9787121139512）</a>
+                            </div>
+                            <div class="price">39.05</div>
+                                                        
+                            </li>
+                        </ul>
+                                                <div class="sum-and-more">
+                            <span data-requrl="/product/detail_async.php?q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&v=product&epid=2502010&p=detail&psrc=detail&start_price=34&end_price=49&comment_num=6&&fseller=孔夫子旧书网&n=10&s=" data-status="collapse" data-countcur="1" data-counttotal="7" class="J_ShowMoreGoods">
+                                <span class="button">共7件商品</span>
+                                <s class="btri-down"></s>
+                            </span>
+                            <span class="more hidden">
+                                <span class="sep">|</span>
+                                <span class="J_GetMoreGoods">
+                                    <span class="button">展开更多</span>
+                                    <s class="btri-down"><i></i></s>
+                                </span>
+                            </span>
+                        </div>
+                                                </div>
+                    </td>
+
+                    <td class="service-tag">
+                                            </td>
+
+                    
+                </tr>
+                             </tbody>
+        </table>
+        
+        </div>
+        
+    </div>
+</div>
+<div id="attributes" class="section">
+    <ul class="tab">
+        <li><a target="_self" href="#contrast"> 比价购物</a></li>
+        <li class="crt"><a target="_self" href="#attributes">参数<s class="btri-up"></s></a></li>
+        <li class="t-top"> <a target="_self" href="#detail"><s class="btri-up"></s>顶部</a> </li>
+</ul>   
+        <table>
+    <thead><tr><th colspan="2">主体</th></tr></thead>
+    <tbody>
+        <tr>
+    <th>字数</th><td>510000</td>
+    </tr>
+        <tr>
+    <th>印数</th><td>1</td>
+    </tr>
+        <tr>
+    <th>装帧</th><td>平装</td>
+    </tr>
+        <tr>
+    <th>初开本</th><td>16开</td>
+    </tr>
+        <tr>
+    <th>页数</th><td>576</td>
+    </tr>
+        <tr>
+    <th>开本</th><td>16开</td>
+    </tr>
+        <tr>
+    <th>出版社</th><td>电子工业出版社</td>
+    </tr>
+        <tr>
+    <th>出版时间</th><td>2011-8-1</td>
+    </tr>
+        <tr>
+    <th>作者</th><td>吴军</td>
+    </tr>
+        <tr>
+    <th>版次印次</th><td>1</td>
+    </tr>
+        <tr>
+    <th>ISBN编号</th><td>9787121139512</td>
+    </tr>
+        <tr>
+    <th>印刷时间</th><td>2011-7-1; 2011-7-1</td>
+    </tr>
+        <tr>
+    <th>纸　　张</th><td>胶版纸; 胶版纸</td>
+    </tr>
+         </tbody>
+    </table>
+    </div>
+</div>
+                    
+   
+   
+
+   
+<div id="etao-footer">
+       
+              <div class="etao-search-bottom etao-form"> 
+            <form action="/search" method="get" id="J_etaoForm2" target="_self"> 
+                <fieldset> 
+                    <legend>一淘搜索框</legend> 
+                                        <input type="hidden" id="q_value" value="" />
+                        <ul class="s-tab clear-fix" id="J_sTab2" data-redirect="true">
+                                <li class="selected"><a hidefocus="true" data-stat-submit="dgl=t&dgt=10" href="http://s.etao.com/search">商品</a></li> 
+                                <li ><a hidefocus="true" data-stat-submit="dgl=t&dgt=5" href="http://web.etao.com/search?t=5">网页</a></li>
+                                <li ><a data-stat-submit="dgl=t&dgt=0" hidefocus="true" href="http://www.etao.com/search?t=0">资讯</a></li> 
+				<li ><a hidefocus="true" data-stat-submit="dgl=t&dgt=11" href="http://8.etao.com/etao.htm?ly=e" data-empty-action="http://8.etao.com/etao.htm?ly=e">淘吧</a></li>
+                                <li ><a hidefocus="true" data-stat-submit="dgl=t&dgt=1" href="http://tuan.etao.com/list.htm">团购</a></li>
+                                
+                        </ul> 
+                       <div class="clear-fix"><div class="ipt-container"><label for="J_searchIpt2">搜索、比价、省钱</label><input autocomplete="off" name="q" maxlength="60" id="J_searchIpt2" value=""></div> <button type="submit"><span>搜索<b></b></span></button></div> 
+                </fieldset> 
+            </form> 
+       </div>    
+      
+     
+    <div class="etao-advise-link clear-fix">
+        <span>我有意见或建议，<a href="http://ur.taobao.com/survey/view.htm?id=614" target="_blank">跟一淘说两句</a></span>；
+        <span>去<a href="http://8.etao.com/etao.htm?bar_id=658273" target="_blank">一淘官方吧</a>讨论</span>
+    </div>
+       <div class="etao-copyright"> 
+        一淘网Copyright &copy; 2010-2011 ETAO.COM 版权所有<br/>
+        增值电信业务经营许可证：浙B2-20080204
+</div>       <a id="J_survey" href="http://ur.taobao.com/survey/view.htm?id=614" target="_blank"><span>跟一淘说两句</span></a> 
+</div>
+       <div id="etao-law">本页内容系一淘根据您的指令自动搜索的结果，非一淘提供的内容，亦不表示一淘赞成被搜索网站的内容或立场<a href="http://www.etao.com/law.html" target="_blank">查看免责申明</a></div><div id="tips_rebate" class="tips-rebate rebate">
+</div>
+<!-- 优惠tips -->
+<div id="tips_preference" class="tips-rebate preference">
+</div>
+<!-- 领取优惠券弹出层tips -->
+<div id="tips-openrebate" class="tips-openrebate">
+	<ul class="N_tips-openrebate">
+		<li>您已选择：<span class="tip"></span></li>
+		<li><a href="#" class="N_icon N_tips-openrebate-buy" target="_blank"></a></li>
+		<li><a href="#" class="N_icon N_tips-openrebate-notbuy"></a></li>
+	</ul>
+</div>
+<div id="server-num" style="color:#fff">s007091.cm8</div>
+<div id="remark" style="color:#fff;height:0pt;width:0pt;position:absolute;overflow:hidden;"></div>
+<script>
+
+function rand() {
+    return parseInt(Math.random()*100000+1);
+}
+window.maidian='http://www.atpanel.com/search?t='+rand()+'&searchurl='+encodeURIComponent(document.location.href)+'&at_lflog=0-0-0-3-0-8-null-price_asc&at_bucketid=0&at_alitrackid=s.etao.com&stats_show=start_price%3A34%3Bend_price%3A49';
+setTimeout(
+function(){
+try{
+	img=new Image();
+	img.src=window.maidian;
+}
+catch(e){}});
+</script><script src="http://a.tbcdn.cn/apps/etao/110920/detail/detail.js?3437715496"></script>
+<script>TB.HubbleMonitor.init({pageId:7000});</script>
+<div style="display:none;">
+<script src='http://w.cnzz.com/c.php?id=30051496&l=3' language='JavaScript'></script>
+<script src='http://w.cnzz.com/c.php?id=30051888' language='JavaScript'></script>
+</div>
+</body></html>

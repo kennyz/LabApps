@@ -1,0 +1,172 @@
+
+                    <td class="service-tag">
+                        <ul><li>正品保障</li><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=648174998" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T15ZhLXgxzXXb1upjX.jpg_80x40.jpg"  title="京东商城" alt="京东商城" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=3-6905333543733647392-0-price_asc-0&at_alitrackid=www.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=biz%3A3_2&url=http%3A%2F%2Fbook.360buy.com%2F10795492.html" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fbook.360buy.com%2F10795492.html&type=alipay&to=d&nid=6905333543733647392&sid=648174998&name=%BE%A9%B6%AB%C9%CC%B3%C7&pid=2088001505446151&sign=e6eb06d38f912e9b6f07c6990231accd" title="浪潮之巅">浪潮之巅</a>
+                            </div>
+                            <div class="price">35.80</div>
+                                                <div class="rebate-preference">
+                	    <ul class="rebate-preference-s">
+						      <li><span class="li-rebate"><span class="N_icon icon-rebate"></span>返利约0.0-2.15元</span></li>						      					    </ul>
+					<textarea class="rebate-detail hidden">
+<span class="N_icon icon-tips-rebate"></span>
+<p class="rebate-tip"><a href="/rebate_redirect.html?nid=6905333543733647392" target="_blank">点此购买</a>，可获返利约<span class="new-tips-error-text">0.0-2.15元</span>。 <a href="/rebate_redirect.html?nid=6905333543733647392" target="_blank">去购买&raquo;</a></p>
+</textarea>							            </div>
+		                                         
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>正品保障</li><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=702810136" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1zJuaXoVrXXb1upjX.jpg_80x40.jpg"  title="快书包" alt="快书包" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=4-2076411508577053904-0-price_asc-0&at_alitrackid=www.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=biz%3A3_2&url=http%3A%2F%2Fwww.kuaishubao.com%2F62%2F1199.html" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.kuaishubao.com%2F62%2F1199.html&type=alipay&to=d&nid=2076411508577053904&sid=702810136&name=%BF%EC%CA%E9%B0%FC&pid=2088301446612911&sign=3b7be96f1c92946b12794a725b5c98d8" title="《浪潮之巅》（IT巨头们的兴衰之路）">《浪潮之巅》（IT巨头们的兴衰之路）</a>
+                            </div>
+                            <div class="price">35.90</div>
+                                                    
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=723767497" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1zWWhXi8bXXb1upjX.jpg_80x40.jpg"  title="精彩网" alt="精彩网" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=5-6262234871882009093-0-price_asc-0&at_alitrackid=www.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=biz%3A3_2&url=http%3A%2F%2Fwww.exvv.com%2Fmall%2Fdetail.jsp%3FproID%3D1418590" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.exvv.com%2Fmall%2Fdetail.jsp%3FproID%3D1418590&type=alipay&to=d&nid=6262234871882009093&sid=723767497&name=%BE%AB%B2%CA%CD%F8&pid=2088002989423836&sign=3d6ea11c5e3094c75e574d563659f305" title="[图书] 浪潮之巅（Google科学家、腾讯副总裁吴军新作，赢得Google黑板报超百万访问量，李开复作序推荐）">[图书] 浪潮之巅（Google科学家、腾讯副总裁吴军新作，赢得Google黑板报超百万访问量，李开复作序推荐）</a>
+                            </div>
+                            <div class="price">38.00</div>
+                                                    
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                                            </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=675379153" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T1OrSjXittXXb1upjX.jpg_80x40.jpg"  title="中国图书网" alt="中国图书网" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=6-2933339736031678975-0-price_asc-0&at_alitrackid=www.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=biz%3A3_2&url=http%3A%2F%2Fwww.bookschina.com%2F5243591.htm" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.bookschina.com%2F5243591.htm&type=alipay&to=d&nid=2933339736031678975&sid=675379153&name=%D6%D0%B9%FA%CD%BC%CA%E9%CD%F8&pid=2088001349509221&sign=a1d657acd77ba0500a9606ad66305380" title="浪潮之巅">浪潮之巅</a>
+                            </div>
+                            <div class="price">43.50</div>
+                                                <div class="rebate-preference">
+                	    <ul class="rebate-preference-s">
+						      <li><span class="li-rebate"><span class="N_icon icon-rebate"></span>返利约0.0-3.05元</span></li>						      					    </ul>
+					<textarea class="rebate-detail hidden">
+<span class="N_icon icon-tips-rebate"></span>
+<p class="rebate-tip"><a href="/rebate_redirect.html?nid=2933339736031678975" target="_blank">点此购买</a>，可获返利约<span class="new-tips-error-text">0.0-3.05元</span>。 <a href="/rebate_redirect.html?nid=2933339736031678975" target="_blank">去购买&raquo;</a></p>
+</textarea>							            </div>
+		                                         
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>货到付款</li></ul>                    </td>
+                                    </tr>
+                                                <tr>
+                    <td class="is-open">
+                                            </td>
+                    <td class="merchant-name" id="contrast-item-0">
+                       <div class="merchant-title">
+                            <div class="pic">
+                                <a target="_blank" href="http://shop.etao.com/search.htm?id=693835347" class="pic"><img src="http://img01.taobaocdn.com/bao/uploaded/i1/T197OmXiJIXXb1upjX.jpg_80x40.jpg"  title="文轩网" alt="文轩网" /></a>
+                            </div>
+                       </div>
+                    </td>
+                    <td class="goods" colspan="2">
+                     <div class="goods-wrap">
+                        <ul class="item-array">
+
+                            <li class="goods clear-fix">
+
+                            <div class="name">
+                            <a target="_blank" data-stat="userid=&lf_aclog=7-9172862470784314926-0-price_asc-0&at_alitrackid=www.etao.com&lf_acfrom=3&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003149&style=list&stats_click=biz%3A3_2&url=http%3A%2F%2Fwww.winxuan.com%2Fproduct%2Fbook_1_1200091848.html" href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.winxuan.com%2Fproduct%2Fbook_1_1200091848.html&type=alipay&to=d&nid=9172862470784314926&sid=693835347&name=%CE%C4%D0%F9%CD%F8&pid=2088401422386730&sign=2e3a5835e9a3f3b3e076327b24f132f8" title="浪潮之巅">浪潮之巅</a>
+                            </div>
+                            <div class="price">48.90</div>
+                                                <div class="rebate-preference">
+                	    <ul class="rebate-preference-s">
+						      <li><span class="li-rebate"><span class="N_icon icon-rebate"></span>返利约0.0-2.93元</span></li>						      					    </ul>
+					<textarea class="rebate-detail hidden">
+<span class="N_icon icon-tips-rebate"></span>
+<p class="rebate-tip"><a href="/rebate_redirect.html?nid=9172862470784314926" target="_blank">点此购买</a>，可获返利约<span class="new-tips-error-text">0.0-2.93元</span>。 <a href="/rebate_redirect.html?nid=9172862470784314926" target="_blank">去购买&raquo;</a></p>
+</textarea>							            </div>
+		                                         
+                            </li>
+                        </ul>
+                                                    </div>
+                    </td>
+
+                    <td class="service-tag">
+                        <ul><li>正品保障</li><li>货到付款</li><li>免邮</li></ul>                    </td>
+                                    </tr>
+                                            </tbody>
+            <tfoot>

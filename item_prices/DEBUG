@@ -1,0 +1,12 @@
+
+debug url:
+
+
+
+http://item.taobao.com/item.htm?id=13566320150&_u=a7rutjo1760&__tlabs-dev&__tlabs_feature_id=243&__tlabs_feature_mod=item_prices.js
+
+http://item.taobao.com/item.htm?id=13566320150&_u=a7rutjo1760&__tlabs-dev&__tlabs_feature_id=243&__tlabs_feature_mod=item_prices.js
+
+
+http://localhost:8080/item_prices?title=浪潮之巅&url=item.taobao.com%2F%2Fitem.htm
+
