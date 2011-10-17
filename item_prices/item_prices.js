@@ -62,13 +62,13 @@ define(function(require) {
 	function load_data() {
 
 		var html = "";
-		if(product!=null) {
+		if(typeof(product) !== "undefined" && product!==null) {
 			var pic = product["pic"];
 			var title = product["title"];
 			html += "<div><img src=\""+pic+"\" width=80 style=\"border: #DDDDDD solid 1px;\"><br><b>"+title+"</b></div>";
 		}	
 		var max = 10;
-		if(visit_users!=null)
+		if(typeof(visit_users)!== "undefined" && visit_users!==null)
 			for(var i=0; i< visit_users.length; i++) {
 				var user = visit_users[i];
 				if(user!=null && user.username!="" && user.username!=="undefined"){

@@ -1,0 +1,9 @@
+- Collaborative editing
+- Backed by node.js
+- Drag and drop layout/image uploading. Don't worry about how things are formatted.
+- Git integration. Tag commit messages with comment/item IDs.
+- Email integration. Email when someone comments on a comment, email reply threads are imported into the app.
+- Branch off new documents from existing ones, reference parent documents.
+- Comment on individual words/blocks of text, display these inband.
+- SQLite or file based nosql database
+- Quick zipping for backup/retiring documents.
