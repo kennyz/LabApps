@@ -121,7 +121,7 @@ exports.getList = function(title, cb_output) {
 	//var remoteurl= "http://s.etao.com/search?q=%C0%CB%B3%B1%D6%AE%E1%DB";
 	//title = ""+title;
 	//title = u2g(title);
-	title = title.trim();
+	//title = title.trim();
 	title = encodeURIComponent(title);
 	var remoteurl= "http://s.etao.com/search?q="+title+"&ie=utf-8";
 	console.log("do request: "+ remoteurl);
