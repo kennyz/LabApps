@@ -2,6 +2,7 @@ var http = require('http');
 var url = require("url");
 var visitors = require("./visitors");
 var logs = new Array();
+/*
 var Iconv = require('iconv').Iconv;
 var gbk_to_utf8_iconv = new Iconv('GBK', 'UTF-8//TRANSLIT//IGNORE');
 var utf8_to_gbk_iconv = new Iconv('UTF-8', 'GBK//TRANSLIT//IGNORE');
@@ -20,6 +21,8 @@ var u2g = exports.u2g = function(body) {
     return strText;
 }
 
+*/
+
 http.createServer(function (req, res) {
  	res.writeHead(200, {'Content-Type': 'text/plain'});
         var uri = url.parse(req.url).pathname;
@@ -35,8 +38,8 @@ http.createServer(function (req, res) {
                     logs.push(user);
 				var list_func = function(){
 					visitors.getList(thisurl,function(data){
-						res.writeHead(200, {'Content-Type': 'application/json;charset=gbk'});
-						res.write("var visit_users = "+u2g(JSON.stringify(data))+";");
+						res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'});
+						res.write("var visit_users = "+JSON.stringify(data)+";");
 						res.end();
 					});
 				}

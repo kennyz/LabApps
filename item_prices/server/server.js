@@ -8,7 +8,7 @@ var port  = process.argv[2]?parseInt(process.argv[2]):80;
 console.log(port);
 
 http.createServer(function (req, res) {
- 	res.writeHead(200, {'Content-Type': 'text/plain'});
+ 	res.writeHead(200, {'Content-Type': 'text/plain;charset=utf-8'});
         var uri = url.parse(req.url).pathname;
         var query = url.parse(req.url, true).query || {};
         if(uri == "/") {
