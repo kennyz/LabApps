@@ -2,6 +2,8 @@ var http = require('http');
 var url = require("url");
 var visitors = require("./visitors");
 var logs = new Array();
+var port  = process.argv[2]?parseInt(process.argv[2]):80;
+console.log(port);
 /*
 var Iconv = require('iconv').Iconv;
 var gbk_to_utf8_iconv = new Iconv('GBK', 'UTF-8//TRANSLIT//IGNORE');
@@ -48,7 +50,7 @@ http.createServer(function (req, res) {
 				else
 					list_func();
         }
-}).listen(80, "127.0.0.1");
+}).listen(port, "127.0.0.1");
 console.log('Server running at http://127.0.0.1/');
 //visitors.list();
 //just for test

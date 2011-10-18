@@ -7,7 +7,7 @@ Visitors = new Schema({
 	id	   : {type:Number,index: true, default: 1},
 	username   : {type:String,index: true},
 	url   : {type:String,index: true},
-	visit_time : { type: Date, default: Date.now },
+	visit_time : { type: Date, default: Date.now() },
 	visit_count: { type:Number,default: 1},
 	msg: {type:String}
  }).method('update', function(){
@@ -20,7 +20,7 @@ var Visitor = mongoose.model('Visitors', Visitors);
 exports.findUser = function(username,url,msg,callback) {Visitor.findOne({"username":username,"url":url},function(err,visit) {
 	if(visit){ //exists
 		console.log("duplicated:"+username); 
-		visit.update();
+		//visit.update();
 	}
 	else {
 		var visit = new Visitor();
@@ -28,8 +28,10 @@ exports.findUser = function(username,url,msg,callback) {Visitor.findOne({"userna
 		visit.url = url;
 		console.log("new user:"+username);
 	}
-	if(msg!="")
+	if(msg!="") { //change msg and visit_time only if msg changed
 		visit.msg = msg;
+   		visit_time = new Date();
+	}
 	visit.save(function(err) {
 		if(!err)	console.log("save sucess:"+username);
 		else console.log(err);
