@@ -35,6 +35,7 @@ var extract_nospu_items = exports.extract_nospu_items = function(body) {
 		newarr.push({"username":encodeURIComponent(title), "cnt":price,"url": url, "msg":""});
 		
 		i++;
+		if(i==5) break;
 	}
 	return newarr;	
 }
