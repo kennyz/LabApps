@@ -16,6 +16,28 @@ var u2g = exports.u2g = function(body) {
 	var strText = utf8_buffer.toString(); 	
 	return strText;
 }
+
+var extract_nospu_items = exports.extract_nospu_items = function(body) {
+	console.log("do extract spu items");
+	var i = 0;
+	var newarr = new Array();
+	var strText = g2u(body);
+	strText = strText.replace(/\n/gm,"");
+	//console.log(strText);
+	var r = /<h3 class=\"summary\"><a data-history=\"\'itemHref\':\'([^\']*?)\',\'itemTitle\':\'([^\']*?)\'.*?<em class=\"J_price\">([^<]*?)<\/em>/ig;
+	while ( m = r.exec(strText) ) {
+		// `m` is your match, `m[1]` is the letter	
+		if(m[1].length == 0 || typeof(m[1]) == 'undefined') continue;	
+		var title = m[2]; //gbk_to_utf8_iconv.convert(m[1]).toString();
+		var url = m[1];
+		var price = m[3];
+		console.log("match: "+title+" "+price);
+		newarr.push({"username":encodeURIComponent(title), "cnt":price,"url": url, "msg":""});
+		
+		i++;
+	}
+	return newarr;	
+}
 								
 var extract_shop_list = exports.extract_shop_list = function(body) {
 	var strText = g2u(body);
@@ -38,8 +60,9 @@ var extract_shop_list = exports.extract_shop_list = function(body) {
 		arr2[i] =m[3];
 		i ++;
 	}
-	console.log("end");
+	console.log("end of shop list");
 	var max = i;
+	if(max>10) max = 10;
 	//get shop url
 /*
 	i = 0;
@@ -100,8 +123,8 @@ var extractURL = exports.extractURL = function(body, callback) {
 			product = {url:url,title:title,pic:pic,flag:1}
 			console.log("got a url: "+url);
 	}
-	else {
-		console.log("failed to find any item");
+	else { //if not spu, then get items
+		console.log("failed to find any spu product");
 	}
 	
 	callback(product);
@@ -114,7 +137,7 @@ var get_page_list = function(product, cb_output) {
     //var remoteurl= "http://s.etao.com/search?epid=2308830&v=product&p=detail&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003148&stats_show=biz:2_1";
     //var remoteurl= "http://s.etao.com/search?epid=2308830&v=product&p=detail&q="+escape(title)+"stats_show=biz:2_1";
     var request = require('request');
-    request({url:remoteurl}, function (error, response, strText) {
+    request({url:remoteurl,timeout:10}, function (error, response, strText) {
 		//console.log(strText);
 		if(error) console.log("error in request"+remoteurl);
 		if (!error && response.statusCode == 200) {
@@ -135,7 +158,7 @@ exports.getList = function(title, cb_output) {
 	var remoteurl= "http://s.etao.com/search?q="+title+"&ie=utf-8";
 	console.log("do request: "+ remoteurl);
 	var request = require('request');
-	request({url:remoteurl }, function (error, response, body) {
+	request({url:remoteurl,timeout:10 }, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
 
 		console.log("end of request search");				
@@ -143,7 +166,8 @@ exports.getList = function(title, cb_output) {
 			if(product["flag"]===1)  //found product
 				get_page_list(product, cb_output);
 			else
-				cb_output(product,[]);
+				cb_output(product,extract_nospu_items(body));
+				//cb_output(product,[]);
 		});
 	  }
 	  else {

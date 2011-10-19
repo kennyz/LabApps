@@ -3,7 +3,8 @@ var shops = require('./shops');
 
 function do_search() {
 	//var remoteurl= "http://s.etao.com/search?q=%C0%CB%B3%B1%D6%AE%E1%DB";
-	var remoteurl= "http://s.etao.com/search?q=%C0%CB%B3%B1%D6%AE%E1%DB";
+	//var remoteurl= "http://s.etao.com/search?q=%C0%CB%B3%B1%D6%AE%E1%DB";
+	var remoteurl= "http://s.etao.com/search?q=%B0%FC%D3%CAshow+room%D5%FD%C6%B7%C5%A3%D7%D0%B6%B7%C5%EE%B7%E7%D2%C2%CD%E2%CC%D7%C6%A4%BF%DB%CB%AB%C5%C5%BF%DB%C5%AE2011%C7%EF%B6%AC%D0%C2";
 	console.log(remoteurl);
 	var request = require('request');
 	request({url:remoteurl}, function (error, response, body) {
@@ -14,13 +15,31 @@ function do_search() {
             if(product["flag"]===1)
                 do_getpage(product);
             else
-            	console.log("failed to find any shops");
+				do_getitems(body);
+            	//console.log("failed to find any shops");
 		});
 	  }
 	  else {
 		console.log("error");
       }
 	});
+}
+
+function do_getitems(body) {
+	var arr = shops.extract_nospu_items(body);
+	console.log("show shops");
+				
+	//var arr = shops.extract_shop_list(body);
+	for(i=0; 	i < arr.length; i++) {
+			var title = arr[i]['username'];
+			var url = arr[i]['url'];
+			//title = encodeURI(title);
+			console.log("shop: "+title+" url: "+url);
+	}
+	if(arr.length==0) {
+        console.log("failed to find any shops");
+	}
+
 }
 
 function do_getpage(product) {
