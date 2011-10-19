@@ -23,17 +23,25 @@ var extract_shop_list = exports.extract_shop_list = function(body) {
 	var i = 0;	
 	//href="http://shop.etao.com/redirect.htm?target=http%3A%2F%2Fwww.szjdw.com%2Fmall%2Fshouji%2F2010-10%2F28%2Fsub6554_18414.html&type=
 	//get shop name
-	var r = /href=\"http:\/\/shop.etao.com\/search.*title=\"([^\"]*)\"/igm;
+	//var r = /href=\"http:\/\/shop.etao.com\/search.*title=\"([^\"]*)\"/igm;
+	strText = strText.replace(/\n/gm,"");
+	//var r = /class=\"merchant-title\".*?title=\"([^\"]*?)\"/ig;
+	var r = /class=\"merchant-title\".*?title=\"([^\"]*?)\".*?class="goods clear-fix".*?href="http:\/\/shop.etao.com\/redirect.htm\?target=([^&]*?)&type=.*?<div class=\"price\">([^<]*?)<\/div>/ig;
 	while ( m = r.exec(strText) ) {
 		// `m` is your match, `m[1]` is the letter	
+		//console.log("match");
 		if(m[1].length == 0 || typeof(m[1]) == 'undefined') continue;	
 		arr[i] = m[1]; //gbk_to_utf8_iconv.convert(m[1]).toString();
 		//arr[i] = gbk_to_utf8_iconv.convert(m[1]).toString();
-		//console.log(arr[i]);
+		console.log(arr[i]);
+		arr3[i] =m[2];
+		arr2[i] =m[3];
 		i ++;
 	}
-	var max = i-1;
+	console.log("end");
+	var max = i;
 	//get shop url
+/*
 	i = 0;
 	var r =/href="http:\/\/shop.etao.com\/redirect.htm\?target=([^&]*)&type=/igm;
 	while ( m = r.exec(strText) ) {
@@ -51,7 +59,8 @@ var extract_shop_list = exports.extract_shop_list = function(body) {
 		arr2[i] = m[1];
 		i ++;
 	}
-		var newarr = new Array();
+*/
+	var newarr = new Array();
 	i = 0;
 	while(i<max) {
 		newarr.push({"username":encodeURIComponent(arr[i]), "cnt":arr2[i],"url": decodeURIComponent(arr3[i]), "msg":""});
