@@ -22,15 +22,14 @@ var extract_nospu_items = exports.extract_nospu_items = function(body) {
 	var i = 0;
 	var newarr = new Array();
 	var strText = g2u(body);
-	strText = strText.replace(/\n/gm,"");
-	//console.log(strText);
-	var r = /<h3 class=\"summary\"><a data-history=\"\'itemHref\':\'([^\']*?)\',\'itemTitle\':\'([^\']*?)\'.*?<em class=\"J_price\">([^<]*?)<\/em>/ig;
+	//strText = strText.replace(/\n/gm,"");
+	var r = /<h3 class=\"summary\"><a data-history=\"\'itemHref\':\'([^\']*?)\',\'itemTitle\':\'([^\']*?)\'.*?,\'itemPrice\':\'([^\']*?)\'.*?\'itemStoreName\':\'([^\']+?)\'/ig;
 	while ( m = r.exec(strText) ) {
 		// `m` is your match, `m[1]` is the letter	
 		if(m[1].length == 0 || typeof(m[1]) == 'undefined') continue;	
-		var title = m[2]; //gbk_to_utf8_iconv.convert(m[1]).toString();
+		var title = m[4]; //gbk_to_utf8_iconv.convert(m[1]).toString();
 		var url = m[1];
-		var price = m[3];
+		var price = ""+m[3];
 		console.log("match: "+title+" "+price);
 		newarr.push({"username":encodeURIComponent(title), "cnt":price,"url": url, "msg":""});
 		
@@ -49,16 +48,17 @@ var extract_shop_list = exports.extract_shop_list = function(body) {
 	//var r = /href=\"http:\/\/shop.etao.com\/search.*title=\"([^\"]*)\"/igm;
 	strText = strText.replace(/\n/gm,"");
 	//var r = /class=\"merchant-title\".*?title=\"([^\"]*?)\"/ig;
-	var r = /class=\"merchant-title\".*?title=\"([^\"]*?)\".*?class="goods clear-fix".*?href="http:\/\/shop.etao.com\/redirect.htm\?target=([^&]*?)&type=.*?<div class=\"price\">([^<]*?)<\/div>/ig;
+	//var r = /class=\"merchant-title\".*?title=\"([^\"]*?)\".*?class="goods clear-fix".*?href="http:\/\/shop.etao.com\/redirect.htm\?target=([^&]*?)&type=.*?<div class=\"price\">([^<]*?)<\/div>/ig;
+	var r = /class=\"compare-logo\".*?title=\"([^\"]*?)\".*?class=\"compare-title\".*?href="http:\/\/shop.etao.com\/redirect.htm\?target=([^&]*?)&type=.*?<p class=\"jn-price\">([^<]*?)<\/p>/ig;
 	while ( m = r.exec(strText) ) {
 		// `m` is your match, `m[1]` is the letter	
 		//console.log("match");
 		if(m[1].length == 0 || typeof(m[1]) == 'undefined') continue;	
 		arr[i] = m[1]; //gbk_to_utf8_iconv.convert(m[1]).toString();
 		//arr[i] = gbk_to_utf8_iconv.convert(m[1]).toString();
-		console.log(arr[i]);
 		arr3[i] =m[2];
-		arr2[i] =m[3];
+		var price = arr2[i] =m[3];
+		console.log(arr[i]+" : "+price);
 		i ++;
 	}
 	console.log("end of shop list");
@@ -138,9 +138,9 @@ var get_page_list = function(product, cb_output) {
     //var remoteurl= "http://s.etao.com/search?epid=2308830&v=product&p=detail&q=%C0%CB%B3%B1%D6%AE%E1%DB&cat=50003148&stats_show=biz:2_1";
     //var remoteurl= "http://s.etao.com/search?epid=2308830&v=product&p=detail&q="+escape(title)+"stats_show=biz:2_1";
     var request = require('request');
-    request({url:remoteurl,timeout:10}, function (error, response, strText) {
+    request({url:remoteurl,timeout:10000}, function (error, response, strText) {
 		//console.log(strText);
-		if(error) console.log("error in request"+remoteurl);
+		if(error) console.log("error in request"+remoteurl+" error:"+error);
 		if (!error && response.statusCode == 200) {
 			
 			cb_output(product,extract_shop_list(strText));
@@ -159,7 +159,7 @@ exports.getList = function(title, cb_output) {
 	var remoteurl= "http://s.etao.com/search?q="+title+"&ie=utf-8";
 	console.log("do request: "+ remoteurl);
 	var request = require('request');
-	request({url:remoteurl,timeout:10 }, function (error, response, body) {
+	request({url:remoteurl,timeout:10000 }, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
 
 		console.log("end of request search");				

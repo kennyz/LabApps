@@ -7,6 +7,9 @@ http://item.taobao.com/item.htm?id=13566320150&_u=a7rutjo1760&__tlabs-dev&__tlab
 
 http://item.taobao.com/item.htm?id=13566320150&_u=a7rutjo1760&__tlabs-dev&__tlabs_feature_id=243&__tlabs_feature_mod=item_prices.js
 
+//no spu item
+http://item.taobao.com/item.htm?id=9478615922&_u=a7rutjo1760&__tlabs-dev&__tlabs_feature_id=243&__tlabs_feature_mod=item_prices.js
+
 
 
 http://localhost:8080/item_prices?title=%E6%B5%AA%E6%BD%AE%E4%B9%8B%E5%B7%85&url=item.taobao.com%2F%2Fitem

@@ -3,10 +3,6 @@
 //LabsJS.define(function(require) {
 define(function(require) {
 		
-	if(window.__item_prices_load) {
-	    return;
-	}
-	window.__item_prices_load = true; 
 	
 	var $ = require("jquery-1.6.1");
 	
@@ -59,13 +55,18 @@ define(function(require) {
 	//var remote_url = 'http://localhost:8080/item_prices?title='+title+"&url="+encodeURIComponent(thisurl);
 	//var remote_url = 'http://localhost:8080/item_prices?title='+escape(title)+"&url="+encodeURIComponent(thisurl);
 		
-	function load_data() {
-
+	function load_data(data) {
+		//alert("load_data");
+		var product = data.product;
+		var visit_users = data.shops;
 		var html = "";
 		if(typeof(product) !== "undefined" && product!==null) {
 			var pic = product["pic"];
 			var title = product["title"];
-			html += "<div><img src=\""+pic+"\" width=80 style=\"border: #DDDDDD solid 1px;\"><br><b>"+title+"</b></div>";
+			if(typeof(title)!=="undefined")
+				html += "<div><img src=\""+pic+"\" width=80 style=\"border: #DDDDDD solid 1px;\"><br><b>"+title+"</b></div>";
+			else
+				html += "<div></div>";
 		}	
 		var max = 10;
 		if(typeof(visit_users)!== "undefined" && visit_users!==null)
@@ -94,16 +95,21 @@ define(function(require) {
 				}
 				if(i>max) break;
 			}
+		
 		$("#price_panel_list").html(html);
 		//alert("load data"+html);
 	}
     //alert(getNick());
+	remote_url += "&callback=?";
+	$.getJSON(remote_url,load_data,"utf-8");
+	
+	/*
     KISSY.getScript(remote_url,function() {
 				
 		load_data();		
 
 	}, "utf-8");
-	
+	*/	
 
 	
 	var user_panel = $("#site-nav");
