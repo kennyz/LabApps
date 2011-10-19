@@ -1,17 +1,17 @@
 
 var Iconv = require('iconv').Iconv;
-var gbk_to_utf8_iconv = new Iconv('GBK', 'UTF-8//TRANSLIT//IGNORE');
-var utf8_to_gbk_iconv = new Iconv('UTF-8', 'GBK//TRANSLIT//IGNORE');
 
 console.log("shops ext");
 
 var g2u = exports.g2u = function(body) {
+	var gbk_to_utf8_iconv = new Iconv('GBK', 'UTF-8//TRANSLIT//IGNORE');
 	var utf8_buffer = gbk_to_utf8_iconv.convert(body);
 	var strText = utf8_buffer.toString(); 	
 	return strText;
 }
 
 var u2g = exports.u2g = function(body) {
+	var utf8_to_gbk_iconv = new Iconv('UTF-8', 'GBK//TRANSLIT//IGNORE');
 	var utf8_buffer = utf8_to_gbk_iconv.convert(body);
 	var strText = utf8_buffer.toString(); 	
 	return strText;

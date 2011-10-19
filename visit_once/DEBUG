@@ -4,8 +4,10 @@ debug url:
 
 http://www.taobao.com/sitemap.php?id=sitemap2&__tlabs-dev&__tlabs_feature_id=144&__tlabs_feature_mod=visit_once.js
 
+http://visitonce.cnodejs.net/put?u=%E7%A9%BA%E6%97%A0&msg=&url=www.taobao.com
 
-visitonce.cnodejs.net/put?u=空无&msg=&url=www.taobao.com
+
+//visitonce.cnodejs.net/put?u=空无&msg=&url=www.taobao.com
 
 
 
